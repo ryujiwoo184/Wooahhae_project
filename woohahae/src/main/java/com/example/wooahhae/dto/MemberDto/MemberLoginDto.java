@@ -1,4 +1,4 @@
-package com.example.woohahae.dto.MemberDto;
+package com.example.wooahhae.dto.MemberDto;
 
 import lombok.NoArgsConstructor;
 

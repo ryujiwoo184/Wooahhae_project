@@ -1,9 +1,10 @@
-package com.example.woohahae.service;
+package com.example.wooahhae.service;
 
-import com.example.woohahae.dto.MemberDto.MemberSignupRequestDto;
-import com.example.woohahae.dto.SuccessDto;
-import com.example.woohahae.model.Member;
-import com.example.woohahae.repository.MemberRepository;
+import com.example.wooahhae.dto.MemberDto.MemberSignupRequestDto;
+import com.example.wooahhae.dto.SuccessDto;
+import com.example.wooahhae.exception.ex.DuplicateEmailException;
+import com.example.wooahhae.model.Member;
+import com.example.wooahhae.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -29,5 +30,13 @@ public class MemberService {
         memberRepository.save(member);
         return ResponseEntity.ok().body(SuccessDto.valueOf("true"));
 
+    }
+
+    @Transactional
+    public ResponseEntity<SuccessDto> emailDuplicateCheck(String email){
+        if(memberRepository.countByEmail(email)!= 0){
+            throw new DuplicateEmailException();
+        }
+        return ResponseEntity.ok().body(SuccessDto.valueOf("true"));
     }
 }

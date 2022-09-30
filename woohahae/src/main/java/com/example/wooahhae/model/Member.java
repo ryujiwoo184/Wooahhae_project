@@ -1,4 +1,4 @@
-package com.example.woohahae.model;
+package com.example.wooahhae.model;
 
 import lombok.*;
 

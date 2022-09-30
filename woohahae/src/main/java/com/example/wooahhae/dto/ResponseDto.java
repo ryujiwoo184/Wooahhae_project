@@ -1,4 +1,4 @@
-package com.example.woohahae.dto;
+package com.example.wooahhae.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
