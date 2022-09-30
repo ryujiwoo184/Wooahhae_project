@@ -1,4 +1,4 @@
-package com.example.woohahae.model;
+package com.example.wooahhae.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
